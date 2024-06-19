@@ -1,0 +1,14 @@
+<div class="header">
+  <div class="logout">
+    <button (click)="logout()">Logout</button>
+  </div>
+</div>
+  <div class="tab">
+    <a routerLink="/hospital/appoitment" routerLinkActive="active">Appointment</a>
+    <a routerLink="/hospital/doctor" routerLinkActive="active">Doctor</a>
+    <a routerLink="/hospital/patient" routerLinkActive="active">Patient</a>
+  </div>
+
+
+  
+<router-outlet></router-outlet>

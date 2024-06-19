@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="form-container" [formGroup]="appointmentForm">
+    <div class="doctors-container">
+      <div>
+        <label for="patient">Patient:</label>
+        <select id="patient" formControlName="patient" class="form-control">
+          <option *ngFor="let data of patientLists" [value]="data.name">{{ data.name }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="doctor">Doctor:</label>
+        <select id="doctor" formControlName="doctor" class="form-control">
+          <option *ngFor="let data of doctorLists" [value]="data.doctorName">{{ data.doctorName }}</option>
+        </select>
+      </div>
+      <div class="calendar-container">
+        <label for="date-picker">Select a date:</label>
+        <input type="date" id="date-picker" formControlName="date">
+      </div>
+      <div class="button-container">
+        <button type="button" (click)="submit()">Submit</button>
+        <button type="button" (click)="reset()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side: Animated Div -->
+  <div class="animated-div">
+    <div *ngFor="let appointment of appotmentList" class="appointment-card animate-slide-up">
+      <p><b>Patient:</b> {{ appointment.patient }}</p>
+      <p><b>Doctor:</b> {{ appointment.doctor }}</p>
+      <p><b>Date:</b> {{ appointment.date | date : "fullDate" }}</p>
+      <div class="button-container">
+        <button type="button" class="btn-edit" (click)="onEditAppointment(appointment)">Edit</button>
+        <button type="button" class="btn-delete" (click)="onDeleteAppointment(appointment)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="container">
+  <div class="form-container" [formGroup]="doctorsForm">
+    <div class="doctors-container">
+      <div >
+        <label for="patient">Name:</label>
+        
+          <input class="form-control" type="date" id="date-picker" type="text" formControlName="doctorName" />
+      
+      </div>
+      <div>
+        <label for="doctor">Speciality:</label>
+        <select id="doctor" formControlName="specialityId" class="form-control">
+          <option *ngFor="let data of speclistData" [value]="data.name">{{ data.name }}</option>
+        </select>
+      </div>
+      
+      <div class="button-container">
+        <button type="button" (click)="submit()">Submit</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side: Animated Div -->
+  <div class="animated-div">
+    <div *ngFor="let doctor of doctorList" class="appointment-card animate-slide-up">
+      <p><b>Doctor Name:</b> {{ doctor.doctorName }}</p>
+      <p><b>Speciality:</b> {{ doctor.specialityId }}</p>
+      <div class="button-container">
+        <button type="button" class="btn-edit" (click)="onEditDoctor(doctor)">Edit</button>
+        <button type="button" class="btn-delete" (click)="onDeleteDoctor(doctor)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-toast /> 
+
+
+
+
+
+<!-- <div style="text-align:center" [formGroup]="doctorsForm">
+    <div class="doctores-container">
+      <div><label>Name</label>&nbsp;<input type="text" formControlName="doctorName" /></div>
+      <div><label>Speciality</label>&nbsp;
+        <select formControlName="specialityId">
+          <option *ngFor="let data of speclistData"   [value]="data.name">{{data.name}}</option>
+        </select>
+      </div>
+      <div>
+        <button (click)="submit()">Submit</button>&nbsp;
+        <button (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <p-toast /> -->

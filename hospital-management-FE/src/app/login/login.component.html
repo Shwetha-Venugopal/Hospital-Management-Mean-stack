@@ -1,0 +1,25 @@
+<div class="page-container">
+    <div class="login-container">
+        <h2>Login</h2>
+        <form [formGroup]="loginForm">
+            <div>
+                <label for="username">User Name:</label>
+                <input type="text" id="username" formControlName="userName" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" formControlName="password" name="password" required>
+            </div>
+            <div class="button-group">
+                <button type="submit" (click)="loginButton()">Login</button>
+                <button type="button"(click)="resetForm()">Cancel</button>
+            </div>
+            <div class="test button-group">
+                <a (click)="naviagateToresetPage()">Reset Password</a>
+                <a (click)="naviagateToRegisterPage()">Register</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<p-toast />

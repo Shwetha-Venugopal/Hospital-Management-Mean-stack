@@ -1,0 +1,113 @@
+
+<div class="container">
+  <div class="form-container" [formGroup]="userProfileForm">
+    <div class="doctors-container">
+      <div >
+        <label for="patient">Name:</label>
+          <input class="form-control" type="date" id="date-picker" type="text" formControlName="name" />
+      
+      </div>
+      <div >
+        <label for="patient">Age:</label>
+          <input class="form-control" type="date" id="date-picker" type="text" formControlName="age" />
+      
+      </div>
+      <div>
+        <label for="doctor">Gender:</label>
+        <select id="gender" formControlName="gender" class="form-control">
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      
+      <div class="button-container">
+        <button type="button" (click)="submitUserProfile()">Submit</button>
+        <button type="button" (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right Side: Animated Div -->
+  <div class="animated-div">
+    <div *ngFor="let patient of patinetLists" class="appointment-card animate-slide-up">
+      <p><b>Name:</b> {{ patient.name }}</p>
+      <p><b>Age:</b> {{ patient.age }}</p>
+      <p><b>Gender:</b> {{ patient.gender }}</p>
+      <div class="button-container">
+        <button type="button" class="btn-edit" (click)="onEditPatient(patient)">Edit</button>
+        <button type="button" class="btn-delete" (click)="onDeletePatient(patient)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<p-toast /> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div style="text-align:center" [formGroup]="userProfileForm">
+  <div class="doctores-container">
+    <div><label>Name</label>&nbsp;<input type="text" formControlName="name" /></div>
+    <div><label>age</label>&nbsp;<input type="text" formControlName="age" /></div>
+    <div>
+      <label for="gender">Gender</label>
+      <select id="gender" formControlName="gender" class="form-control">
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+    
+     
+    </div> -->
+    <!-- <div>
+      <button (click)="submitUserProfile()">Submit</button>&nbsp;
+      <button (click)="cancel()">Cancel</button>
+    </div>
+  </div>
+</div> --> 
+
+<!-- <p-toast /> -->
